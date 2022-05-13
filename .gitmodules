@@ -1,0 +1,3 @@
+[submodule "Data-Structures_and_Algorithms"]
+	path = Data-Structures_and_Algorithms
+	url = git@github.com:DeepakMishraDA/Data-Structures_and_Algorithms.git
