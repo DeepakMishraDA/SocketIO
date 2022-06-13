@@ -36,7 +36,7 @@
 import { io } from "socket.io-client";
 
 const socket = io.connect('http://localhost:3000');
-const Person = {
+const person = {
     notifications: [
       {
         uri: '/notification/relevantflag',
@@ -87,8 +87,11 @@ const Person = {
       }
     ],
   };
-socket.emit('HELLO', Person);
-socket.emit('ALARMNOTIFICATION',Person)
+socket.emit('HELLO', person);
+socket.emit('ALARMNOTIFICATION',person);
+socket.on('LISTEN', (data) => {
+  console.log(data)
+})
 
 
 // function funOne() {
