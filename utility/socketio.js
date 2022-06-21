@@ -4,13 +4,13 @@ export function launchSocketserver (server){
 
 //Server is a class  object coming from socket.io module or library 
 
-    const io = new Server(server);
+    const io = new Server();
 
 // io.of('/trialroute').on('connection', (socket) => {
 //     socket.on('conn',data => {
 //       console.log("DATA:", data.notifications[0].location.district)})
 //       } )
-
+    io.attach(server)
     io.sockets.on('connection', function (socket) {
         
             socket.emit('LISTEN', "My Name Is DASHANAN!")
