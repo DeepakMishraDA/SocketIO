@@ -11,29 +11,24 @@ export function launchSocketserver (server){
 //       console.log("DATA:", data.notifications[0].location.district)})
 //       } )
     io.attach(server)
-    io.sockets.on('connection', function (socket) {
+    let users = [];
+    io.on('connection', function (socket) {
         
             socket.emit('LISTEN', "My Name Is DASHANAN!")
             //here after
             socket.on('ALARMNOTIFICATION', async function (data) {
             try {
-                const parseObj = JSON.parse(data);
-                console.log(parseObj)
-                // switch (parseObj.notifications[0].uri) {
-                //     case '/notification/relevantflag':
-                //     console.log("DATAONE",data);
-                //     break;
-                //     case '/notification/readflag':            
-                //     console.log("My name is Dashanan");
-                //     break; 
-                //     default:
-                //     break;
-                // }
+                console.log(socket)
+                console.log(data)
             } catch (err) {
                 console.log(err);
             }
             });
+            const count = io.engine.clientsCount;
+            console.log(count);
         }
         );
+        
+       
 }
 
