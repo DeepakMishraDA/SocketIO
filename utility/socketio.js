@@ -25,6 +25,7 @@ export function launchSocketserver (server){
             }
             });
             const count = io.engine.clientsCount;
+            const cli1 = socket.
             console.log(count);
         }
         );
