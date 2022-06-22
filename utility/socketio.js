@@ -6,10 +6,10 @@ export function launchSocketserver (server){
 
     const io = new Server();
 
-// io.of('/trialroute').on('connection', (socket) => {
-//     socket.on('conn',data => {
-//       console.log("DATA:", data.notifications[0].location.district)})
-//       } )
+io.of('/trialroute').on('connection', (socket) => {
+    socket.on('conn',data => {
+      console.log("DATA:", data)})
+      } )
     io.attach(server)
     let users = [];
     io.on('connection', function (socket) {
