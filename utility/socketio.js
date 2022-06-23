@@ -25,7 +25,7 @@ io.of('/trialroute').on('connection', (socket) => {
             }
             });
             const count = io.engine.clientsCount;
-            const cli1 = socket.
+            //const cli1 = socket.
             console.log(count);
         }
         );
