@@ -7,3 +7,9 @@ socket.emit('ALARMNOTIFICATION',person);
 socket.on('LISTEN', (data) => {
   console.log(data)
 })
+
+let users = "pp";
+(() => {
+  
+  console.log(users);
+})();
