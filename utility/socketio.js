@@ -24,7 +24,7 @@ export function launchSocketserver (server){
     //the connection, connect and new_namespace strings are reserved and cannot be used in your application.
 
     io.sockets.on('connection', function (socket) {
-        socket.on("Join!", username => {
+        socket.on("Start-Chat", username => {
             try {
             const user = {
                 username,
@@ -37,6 +37,7 @@ export function launchSocketserver (server){
                 console.log(err);
             }
         });
+        socket.on("Join Room!")
     });          
 
 }
