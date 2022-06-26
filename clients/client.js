@@ -1,9 +1,9 @@
 import { io } from "socket.io-client";
 
 const socket = io.connect('http://localhost:3000');
-socket.emit('Join!');
+socket.emit('Join!', "Joey");
 socket.on("New User",(data) => {
-  console.log(data)
+  console.log(data);
 })
 
 
