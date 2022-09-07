@@ -17,27 +17,31 @@ export function launchSocketserver (server){
     // io.emit("hello");
     // are actually equivalent to
     // io.of("/").on("connection", (socket) => {});
-    // io.of("/").use((socket, next) => { next() });
+    // io.of("/").u((se((socket, next) => { next() });
     // io.of("/").emit("hello")
     //The Server instance emits one single event: "connection"
     //Well, technically two, but connect is an alias for connection
     //the connection, connect and new_namespace strings are reserved and cannot be used in your application.
 
     io.sockets.on('connection', function (socket) {
-        socket.on("Start-Chat", username => {
-            try {
-            const user = {
-                username,
-                id: socket.id,
-            }
-            users.push(user);
-            io.emit("New User", users)
+        console.log("dee")
+        // socket.on("Start-Chat", username => {
+        //     try {
+        //     const user = {
+        //         username,
+        //         id: socket.id,
+        //     }
+        //     users.push(user);
+        //     io.emit("New User", users)
        
-            } catch (err) {
-                console.log(err);
-            }
-        });
-        socket.on("Join Room!")
+        //     } catch (err) {
+        //         console.log(err);
+        //     }
+        // });
+        //socket.on("Join Room!")
+        socket.on('dis', data => {
+            console.log(data)
+        })
     });          
 
 }

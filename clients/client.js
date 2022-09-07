@@ -1,10 +1,11 @@
 import { io } from "socket.io-client";
 
 const socket = io.connect('http://localhost:3000');
-socket.emit("Start-Chat", "Joey");
-socket.on("New User",(data) => {
-  console.log(data);
-})
+//socket.emit("Start-Chat", "Joey");
+socket.emit("dis", "Shreya on Docker")
+// socket.on("New User",(data) => {
+//   console.log(data);
+// })
 
 
 
